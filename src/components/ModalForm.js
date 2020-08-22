@@ -27,7 +27,7 @@ const ModalForm = ({
       {modal && (
         <div className='modal-content'>
           <div className='imgForm'>
-            <img src={imageData.url} alt='' />
+            <img src={imageData.url} alt='' className='fullimg'/>
             <div className='comments'>
               <span className='close' onClick={onClick}>
                 &times;

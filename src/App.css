@@ -68,13 +68,11 @@
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;  
+  background-color: #fefefe;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
-  display: grid;
-  grid-template-columns: 600px 200px;
   position: relative;
-  margin: 5% auto;  
+  margin: 5% auto;
   min-height: 600px;
   padding: 0px;
   min-width: 800px;
@@ -98,7 +96,6 @@
 }
 
 .imgForm {
-  display: grid;
   padding: 30px;
   justify-content: start;
   text-align: left;
@@ -106,10 +103,14 @@
 }
 
 .comments {
-  display: grid;
+  float: left;
   padding: 30px;
   min-width: 200px;
   margin-left: 20px;
+}
+
+.fullimg {
+  float: left;
 }
 
 .comment {
@@ -137,8 +138,8 @@ input {
 
 .submitbut {
   text-align: center;
-  background: #4997D0;
-  color: #FFFFFF;
+  background: #4997d0;
+  color: #ffffff;
 }
 
 @media all and (max-width: 500px) {
@@ -150,6 +151,9 @@ input {
     grid-template-rows: 600px 1fr;
   }
   .imgForm {
+    padding: 0px;
+  }
+  .comments {
     padding: 0px;
   }
 }

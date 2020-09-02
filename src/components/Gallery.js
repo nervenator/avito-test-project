@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
-const Gallery = ({images, clickHandler}) => {
-  const onClick = clickHandler;
+const Gallery = ({ clickHandler }) => {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch('https://boiling-refuge-66454.herokuapp.com/images')
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className='gallery'>
-      {images.map(image=> <img onClick={onClick} src={image.url} alt={image.id} key={image.id} className='image'></img>)}
+      {images.map((image) => (
+        <img
+          onClick={clickHandler}
+          src={image.url}
+          alt={image.id}
+          key={image.id}
+          className='image'
+        ></img>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;

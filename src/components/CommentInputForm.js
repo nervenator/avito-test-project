@@ -15,7 +15,7 @@ const CommentInputForm = ({imageId}) => {
     addComment(comment);
   };
 
-  // Since api doesnt actally add a comment, there is only a status check
+  // Since api doesnt actually add a comment, there is only a status check
 
   const addComment = (comment) => {
     fetch(
